@@ -1,0 +1,15 @@
+#!/bin/bash
+
+function menu {
+	echo 
+	echo -e "\t\t\tsmart command menu\n"
+	echo -e "\t\t使用方法: smart command. 如: ./smart cbf 修改代码格式\n"
+	echo -e "\t1. cbf: 修改代码格式\n"
+	echo -e "\t2. cs: 检测代码格式\n"
+	echo -e "\t3. cpd: 复制黏贴检测\n"
+	echo -e "\t4. md: 混乱度检测\n"
+	echo -e "\t5. unit: 单元测试\n"
+	echo -e "\t6. unitFile: 运行单个单元测试文件 unitFile xxxx(文件名,不用添加后缀.php)\n"
+	echo -e "\t7. unitCover: 单元测试覆盖率\n"
+	echo -e "\t8. composer: 更新composer包\n"
+}

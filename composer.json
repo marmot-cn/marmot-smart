@@ -1,0 +1,23 @@
+{
+    "name": "marmot/marmot-smart",
+    "description": "marmot project smart tool",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "chloroplast",
+            "email": "dingkebin@qixinyun.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "bin": [
+        "marmot-smart"
+    ],
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        }
+    }
+}
