@@ -1,19 +1,19 @@
 #!/bin/bash
 
 function checkCommandExecute {
-	if [ ! -x ./$1 ];then 
-		chmod +x ./$1
+	if [ ! -x $1 ];then 
+		chmod +x $1
 	fi
 }
 
 function cbf {
-	checkCommandExecute ./phpcbf
-	./phpcbf
+	checkCommandExecute /var/www/html/vendor/bin/phpcbf
+	/var/www/html/vendor/bin/phpcbf
 }
 
 function cs {
-	checkCommandExecute ./phpcs
-	./phpcs --report-full
+	checkCommandExecute /var/www/html/vendor/bin/phpcs
+	/var/www/html/vendor/bin/phpcs --report-full
 }
 
 function composer {
@@ -21,33 +21,33 @@ function composer {
 }
 
 function cpd {
-	checkCommandExecute ./cpd
-	./phpcpd --names-exclude src tests
+	checkCommandExecute /var/www/html/vendor/bin/phpcpd
+	/var/www/html/vendor/bin/phpcpd --names-exclude src tests
 }
 
 function unit {
-	checkCommandExecute ./phpunit
-	./phpunit --stop-on-failure
+	checkCommandExecute /var/www/html/vendor/bin/phpunit
+	/var/www/html/vendor/bin/phpunit --stop-on-failure
 }
 
 function unitFile {
-	checkCommandExecute ./phpunit
-	./phpunit --filter="$1"
+	checkCommandExecute /var/www/html/vendor/bin/phpunit
+	/var/www/html/vendor/bin/phpunit --filter="$1"
 }
 
 function unitCover {
-	checkCommandExecute ./phpunit
-	./phpunit --debug --stop-on-failure --testsuite ut --coverage-html ./docs/UnitTestCover
+	checkCommandExecute /var/www/html/vendor/bin/phpunit
+	/var/www/html/vendor/bin/phpunit --debug --stop-on-failure --testsuite ut --coverage-html ./docs/UnitTestCover
 }
 
 function unitFileCover {
-	checkCommandExecute ./phpunit
-	./phpunit --filter="$1" --debug --stop-on-failure --coverage-html ./docs/UnitTestCoverTemp
+	checkCommandExecute /var/www/html/vendor/bin/phpunit
+	/var/www/html/vendor/bin/phpunit --filter="$1" --debug --stop-on-failure --coverage-html ./docs/UnitTestCover
 }
 
 function md {
-	checkCommandExecute ./phpmd
-	./phpmd ./src,tests text ruleset.xml 
+	checkCommandExecute /var/www/html/vendor/bin/phpmd
+	/var/www/html/vendor/bin/phpmd ./src,tests text ruleset.xml 
 	if [ $? -eq 0 ]
 	then
 		echo 'check mess complete'

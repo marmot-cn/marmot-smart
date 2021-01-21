@@ -1,11 +1,9 @@
 #!/bin/bash
 
 #加载公共smart函数库
-. /var/www/html/vendor/marmot-smart/smartfunc/smartfunc
-#加载环境函数库
-. /var/www/html/vendor/marmot-smart/smartfunc/environmentfunc
+. /var/www/html/vendor/marmot/marmot-smart/smartfunc/smartfunc
 #加载phpfunc,php相关函数库
-. /var/www/html/vendor/marmot-smart/smartfunc/phpfunc
+. /var/www/html/vendor/marmot/marmot-smart/smartfunc/phpfunc
 
 case $1 in
 'initial') 
@@ -38,13 +36,13 @@ case $1 in
 	unit
 	;;
 'unitFile')
-	unitFile $1
+	unitFile $2
 	;;
 'unitCover')
 	unitCover
 	;;
 'unitFileCover')
-	unitFileCover $1
+	unitFileCover $2
 	;;	
 *)
 	menu
