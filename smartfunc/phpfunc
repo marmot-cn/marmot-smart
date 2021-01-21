@@ -17,7 +17,7 @@ function cs {
 }
 
 function composer {
-	composer update
+	/usr/local/bin/composer update
 }
 
 function cpd {
